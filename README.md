@@ -1,4 +1,4 @@
-Veracode Bluk Updater
+Veracode Bulk Updater
 A little Javascript tool to bulk update users and profiles on the Veracode platfrom
 
 
