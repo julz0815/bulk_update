@@ -55,9 +55,7 @@ if ( program.type == 'users' ) {
     console.log(chalk.green('Working with users'))
     if ( program.actions == 'update' ) {
         console.log(chalk.green('Updating users'))
-        console.log(chalk.green('API ID: '+program.apiID))
-        console.log(chalk.green('API Key: '+program.apiKey))
-        const updateUsersRun = await updateUsers(program.file, program.apID, program.apiKey)
+        const updateUsersRun = await updateUsers(program.file, program.apiID, program.apiKey)
     }
     else if ( program.actions == 'fetch' ) {
         console.log(chalk.green('Fetching users'))

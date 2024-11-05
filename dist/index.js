@@ -4378,9 +4378,7 @@ if (missingRequiredArg) {
         console.log(chalk_1.default.green('Working with users'));
         if (commander_plus_1.default.actions == 'update') {
             console.log(chalk_1.default.green('Updating users'));
-            console.log(chalk_1.default.green('API ID: ' + commander_plus_1.default.apiID));
-            console.log(chalk_1.default.green('API Key: ' + commander_plus_1.default.apiKey));
-            const updateUsersRun = yield (0, update_users_1.updateUsers)(commander_plus_1.default.file, commander_plus_1.default.apID, commander_plus_1.default.apiKey);
+            const updateUsersRun = yield (0, update_users_1.updateUsers)(commander_plus_1.default.file, commander_plus_1.default.apiID, commander_plus_1.default.apiKey);
         }
         else if (commander_plus_1.default.actions == 'fetch') {
             console.log(chalk_1.default.green('Fetching users'));
