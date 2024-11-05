@@ -3,8 +3,8 @@ import { selectPlatform, calculateAuthorizationHeader } from '../auth'
 import fs from 'fs';
 import chalk from 'chalk'
 
-export async function fetchApps(file:any, credentialsfile:any) {
-    const platform = await selectPlatform(credentialsfile);
+export async function fetchApps(file:any, apiID:any, apiKey:any) {
+    const platform = await selectPlatform(apiID, apiKey);
 
     
 

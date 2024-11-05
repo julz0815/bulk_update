@@ -4,8 +4,8 @@ import fs from 'fs';
 import chalk from 'chalk'
 import csv from 'csv-parser';
 
-export async function updateApps(file:any, credentialsfile:any) {
-    const platform = await selectPlatform(credentialsfile);
+export async function updateApps(file:any, apiID:any, apiKey:any) {
+    const platform = await selectPlatform(apiID, apiKey);
     let authHeader
     let pageNumber = 0;
     let perPage = 50;

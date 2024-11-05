@@ -1,0 +1,10 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Bash@3
+  displayName: Update Users on Veracode Platform
+  inputs:
+    targetType: 'inline'
+    script: |
+      node index.js --type users --actions update --file $(users-file) --apiID $(apiID) --apiKey $(apiKey)

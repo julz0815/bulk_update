@@ -1,0 +1,10 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Bash@3
+  displayName: Update Apss on Veracode Platform
+  inputs:
+    targetType: 'inline'
+    script: |
+      node index.js --type profiles --actions update --file $(profiles-file) --apiID $(apiID) --apiKey $(apiKey)

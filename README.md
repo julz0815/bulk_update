@@ -4,7 +4,7 @@ A little Javascript tool to bulk update users and profiles on the Veracode platf
 
 Usage 
 
-Usage: index.js --type <users|profiles> --actions <update|fetch> --file <input file | output file> --credentialsfile <credentials file>
+Usage: index.js --type <users|profiles> --actions <update|fetch> --file <input file | output file> --apiID <API ID> --apiKey <API Key>
 
   Options:
 
@@ -12,7 +12,8 @@ Usage: index.js --type <users|profiles> --actions <update|fetch> --file <input f
     --type <users|profiles>               choose to work with users or profiles
     --actions <update|fetch>              select the action to perform, either update the users or profiles online or fetch the actual data from the Veracode platfomr
     --file <input file | output file>     provide a file name with your updates or where to store to fetched data
-    --credentialsfile <credentials file>  provide a the path to your Veracode credentaidls file
+    --apiID <Veracode API ID>             provide the Veracode API ID
+    --apiKey <Veracode API Key>           provide the Veracode API Key
 
 
 Prerequisite

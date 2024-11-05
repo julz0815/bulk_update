@@ -1,0 +1,15 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Bash@3
+  displayName: Fetch Users from Veracode Platform
+  inputs:
+    targetType: 'inline'
+    script: |
+      node index.js --type users --actions fetch --file users.csv --apiID $(apiID) --apiKey $(apiKey)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/users.csv'
+    ArtifactName: 'VeracodeUsers'

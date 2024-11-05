@@ -57,12 +57,15 @@ export async function calculateAuthorizationHeader(params: AuthorizationHeaderPa
 }
 
 
-export async function selectPlatform(credentialsfile:any){
+export async function selectPlatform(apiID:any, apiKey:any) {
   
-  const fileContent = fs.readFileSync(credentialsfile, 'utf-8');
-  const creds = ini.parse(fileContent);
-  const veracodeApiKeyId = creds.default.veracode_api_key_id;
-  const veracodeApiKeySecret = creds.default.veracode_api_key_secret;
+  //const fileContent = fs.readFileSync(credentialsfile, 'utf-8');
+  //const creds = ini.parse(fileContent);
+  //const veracodeApiKeyId = creds.default.veracode_api_key_id;
+  //const veracodeApiKeySecret = creds.default.veracode_api_key_secret;
+
+  const veracodeApiKeyId = apiID;
+  const veracodeApiKeySecret = apiKey;
   
 
   let requestParameters:RequestParameters

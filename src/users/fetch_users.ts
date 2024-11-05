@@ -3,8 +3,8 @@ import { selectPlatform, calculateAuthorizationHeader } from '../auth'
 import fs from 'fs';
 import chalk from 'chalk'
 
-export async function fetchUsers(file:any, credentialsfile:any) {
-    const platform = await selectPlatform(credentialsfile);
+export async function fetchUsers(file:any, apiID:any, apiKey:any) {
+    const platform = await selectPlatform(apiID, apiKey);
 
     let pageNumber = 0;
     let perPage = 20;
@@ -45,7 +45,21 @@ export async function fetchUsers(file:any, credentialsfile:any) {
             }
         });
         users = users.concat(response.data._embedded.users);
-        totalPages = response.data.total_pages;
+        //totalPages = response.data.total_pages;
+
+        if (response.data && response.data._embedded && response.data._embedded.users) {
+            users = users.concat(response.data._embedded.users);
+        } else {
+            console.error('Unexpected response structure:', response.data);
+            break;
+        }
+        
+        if (response.data.page && response.data.page.total_pages !== undefined) {
+            totalPages = response.data.page.total_pages;
+        } else {
+            console.error('total_pages not found in response:', response.data);
+            break;
+        }
         pageNumber++;
     }
 
